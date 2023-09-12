@@ -2,25 +2,24 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 
-# Define  ETL functions for each task.
 
-# Initialize the DAG
+# Initializing the DAG
 dag = DAG(
     'data_warehouse_etl',
-    schedule_interval=None,  # Set the schedule as needed
-    start_date=datetime(2023, 1, 1),  # Define the start date
-    catchup=False  # Disable catching up missed runs
+    schedule_interval=None,  # we can set the schedule as needed
+    start_date=datetime(2023, 1, 1),  # defining the start date
+    catchup=False  # this disables catching up missed runs
 )
 
-# Task 1: Extract CSV data and load into staging table(s)
+# Task 1: Extracting  CSV data and loading into staging tables
 extract_task = PythonOperator(
     task_id='extract_csv',
     python_callable=extract_csv,
-    provide_context=True,  # Allows passing context (like execution date)
+    provide_context=True,  # we are allowing passing context (like execution date)
     dag=dag
 )
 
-# Task 2: Transform data into dimension and fact tables
+# Task 2: Transforming data into dimension and fact tables
 transform_task = PythonOperator(
     task_id='transform_data',
     python_callable=transform_data,
@@ -28,7 +27,7 @@ transform_task = PythonOperator(
     dag=dag
 )
 
-# Task 3: Clean up staging table(s)
+# Task 3: Cleaning up staging table(s)
 cleanup_task = PythonOperator(
     task_id='cleanup_staging',
     python_callable=cleanup_staging,
@@ -36,7 +35,7 @@ cleanup_task = PythonOperator(
     dag=dag
 )
 
-# Task 4: Optionally, perform data quality checks
+# Task 4: performing data quality checks
 data_quality_task = PythonOperator(
     task_id='data_quality_check',
     python_callable=data_quality_check,

@@ -8,10 +8,11 @@ To parse the given CSV data, design dimensions and fact tables, and use Apache A
 
 # Step 1: Create Database Schema
 
-1. Create a database schema in MySQL or SQL Server where you will store the data warehouse tables.
+Create a database schema in MySQL or SQL Server where you will store the data warehouse tables.
 
 # Step 2: Define Dimension Tables
-2. Define dimension tables for the following entities:
+
+Define dimension tables for the following entities:
 
 - Customer
 - Campaign
@@ -25,16 +26,15 @@ To parse the given CSV data, design dimensions and fact tables, and use Apache A
 
 # Step 3: Define Fact Table
 
-3. Define a fact table to store the metrics (Impressions, Clicks, Spend, etc.) with foreign keys to the dimension tables.
+Define a fact table to store the metrics (Impressions, Clicks, Spend, etc.) with foreign keys to the dimension tables.
 
 # Step 4: Create Airflow DAG
 
-4. Create an Airflow DAG to automate the ETL process. The DAG should consist of the following tasks:
+Create an Airflow DAG to automate the ETL process. The DAG should consist of the following tasks:
 
-Task 1: Extract CSV data and load it into staging table(s).
-Task 2: Transform data from staging table(s) into dimension and fact tables.
-Task 3: Clean up staging table(s).
-Task 4: Optionally, perform data quality checks.
-Task 5: Optionally, schedule the DAG to run periodically.
-Now, let's look at a more detailed Python code example for each of these steps.
+- Task 1: Extract CSV data and load it into staging table(s).
+- Task 2: Transform data from staging table(s) into dimension and fact tables.
+- Task 3: Clean up staging table(s).
+- Task 4: Optionally, perform data quality checks.
+- Task 5: Optionally, schedule the DAG to run periodically.
 

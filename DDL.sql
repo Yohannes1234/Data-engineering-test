@@ -1,8 +1,8 @@
 
---Step 1: Create Database Schema
+--Step 1: Createing Database Schema
 
 
---Create the database schema if it doesn't exist
+--Createing the database schema if it doesn't exist
 
 CREATE DATABASE IF NOT EXISTS radancy_dw;
 
@@ -19,8 +19,7 @@ CREATE TABLE customer (
      -- Add other columns as needed
  );
 
-
--- we can define similar tables for Campaign, Ad Group, Ad, Device, Language, Network, Currency, and Date dimensions.
+-- We can define similar tables for Campaign, Ad Group, Ad, Device, Language, Network, Currency, and Date dimensions.
 
 -- Step 3: Define Fact Table
 
@@ -42,10 +41,10 @@ CREATE TABLE fact (
      avg_position DECIMAL(4, 2),
      conversions INT,
      assists INT
-     -- we can add other columns as needed
+     -- We can add other columns as needed
 );
 
--- we cna  further define foreign keys to link the fact table to dimension tables.
+-- We can  further define foreign keys to link the fact table to dimension tables.
 
 
 

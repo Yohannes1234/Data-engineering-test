@@ -2,7 +2,7 @@
 
 # Overview
 
-Each task of extracting, transforming, cleanup, and data quality has a corresponding Python function that performs the required actions. The Airflow DAG orchestrates these tasks, ensuring that they run in the specified order. We can further customize and expand the ETL process and add error handling as needed. The SQL statements and Python functions can also be customized to match specific requirements, use cases and database systems.
+Each task of extracting, transforming, cleanup, and data quality has a corresponding Python function that performs the required actions. From a Python perspective, I use OOP in the office but not sure as we don’t have the logical requirements. The Airflow DAG orchestrates these tasks, ensuring that they run in the specified order. We can further customize and expand the ETL process and add error handling as needed. The SQL statements and Python functions can also be customized to match specific requirements, use cases, and database systems.
 
 To parse the given CSV data, design dimensions, and fact tables, and use Apache Airflow for workflow management, we'll break down the process into multiple steps. Here's a high-level overview of the steps and the structure of the Python code, SQL scripts, and Airflow DAG :
 

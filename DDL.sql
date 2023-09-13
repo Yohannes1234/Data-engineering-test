@@ -1,15 +1,15 @@
 
---Step 1: Createing Database Schema
+--Step 1: Creating Database Schema
 
 
---Createing the database schema if it doesn't exist
+--Create the database schema if it doesn't exist
 
 CREATE DATABASE IF NOT EXISTS radancy_dw;
 
 --  Step 2: Define Dimension Tables
 
 -- SQL CREATE statements for dimension tables
--- Example for the Customer dimension table:
+--  for Customer dimension table:
 CREATE TABLE customer (
      customer_id INT PRIMARY KEY,
      customer_name VARCHAR(255),
